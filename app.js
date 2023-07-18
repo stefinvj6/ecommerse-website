@@ -24,6 +24,15 @@ app.use('/user',users)
 const profiles = require("./Router/Profile")
 app.use('/profile',profiles)
 
+const categories = require("./Router/Category")
+app.use("/category",categories)
+
+const products = require("./Router/product")
+app.use("/product",products)
+
+const carts = require("./Router/Cart")
+app.use("/cart",carts)
+
 app.listen(port,()=>{
     console.log(`Your port is live on: ${port}`)
 })
