@@ -80,10 +80,3 @@ router.post("/login",async(req,res)=>{
 })
 
 module.exports=router;
-// router.post("/",async(req,res)=>{
-//     try {
-        
-//     } catch (error) {
-//         res.status(404).send(error)
-//     }
-// })

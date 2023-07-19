@@ -33,6 +33,12 @@ app.use("/product",products)
 const carts = require("./Router/Cart")
 app.use("/cart",carts)
 
+const reviews = require("./Router/Review")
+app.use("/review",reviews)
+
+const feedbacks = require("./Router/Feedback")
+app.use("/feedback",feedbacks)
+
 app.listen(port,()=>{
     console.log(`Your port is live on: ${port}`)
 })

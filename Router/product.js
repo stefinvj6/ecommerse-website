@@ -14,7 +14,7 @@ router.post("/",async(req,res)=>{
 
 router.get("/",async(req,res)=>{
     try {
-        const getProduct = await product.find().populate("category")
+        const getProduct = await product.find()
         res.status(200).json(getProduct)
     } catch (error) {
         res.status(404).send(error)
@@ -32,5 +32,25 @@ router.get("/:id",async(req,res)=>{
         res.status(404).send(error)
     }
 })
+
+router.get("/category/:category", async (req, res) => {
+    try {
+      const { category } = req.params;
+      const getProduct = await product.find({ category: category })
+      res.status(200).json(getProduct);
+    } catch (error) {
+      res.status(404).send(error);
+    }
+  });
+
+router.put("/:id",async(req,res)=>{
+    try {
+        const editProduct = await product.findByIdAndUpdate(req.params.id,req.body)
+        res.json(editProduct)
+    } catch (error) {
+        res.send(error)
+    }
+})
+  
 
 module.exports=router;
